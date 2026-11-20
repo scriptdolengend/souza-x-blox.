@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090d0b">
+<title>Souza X Blox | Vox Seas</title>
+<style>
+:root{--bg:#080c0a;--panel:#101813;--green:#39e58c;--muted:#9aaba1;--line:#20352a}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at 50% -15%,#173b29 0,transparent 48%),var(--bg);color:#f1f7f3;font-family:Inter,Arial,sans-serif;min-height:100vh}
+header{height:76px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 max(6%,calc((100% - 1100px)/2));background:#080c0ad9;position:sticky;top:0;backdrop-filter:blur(12px);z-index:2}
+.brand{font-size:21px;font-weight:900;letter-spacing:1px}.brand span{color:var(--green)}.status{font-size:11px;color:var(--green);border:1px solid #286844;border-radius:30px;padding:7px 11px;letter-spacing:1px}
+main{width:min(920px,90%);margin:54px auto 70px}.eyebrow{color:var(--green);font-size:12px;font-weight:800;letter-spacing:3px}
+h1{font-size:clamp(36px,7vw,64px);margin:12px 0 8px;letter-spacing:-2px}.subtitle{color:var(--muted);line-height:1.6;margin:0 0 30px}
+.hero{height:250px;border:1px solid #28543a;border-radius:20px;overflow:hidden;position:relative;background:linear-gradient(110deg,#10281c,#0c1711 55%,#163c28);display:flex;align-items:end;padding:28px}
+.hero:before{content:"";position:absolute;width:260px;height:260px;border:1px solid #397d55;border-radius:50%;right:8%;top:-75px;box-shadow:0 0 0 25px #39e58c0a,0 0 0 55px #39e58c08}
+.hero:after{content:"VOX";position:absolute;right:8%;top:25px;font-size:clamp(65px,15vw,130px);font-weight:1000;color:#b6ffd21a;letter-spacing:-8px}
+.hero-copy{position:relative;z-index:1}.hero-copy small{color:#9de9bd;letter-spacing:2px;font-weight:bold}.hero-copy h2{font-size:34px;margin:7px 0}.hero-copy p{margin:0;color:#b6c9bd}
+.card{margin-top:24px;background:linear-gradient(145deg,#121d16,#0d130f);border:1px solid var(--line);border-radius:18px;padding:24px}
+.card-head{display:flex;justify-content:space-between;align-items:center;gap:12px}.card h3{margin:0;font-size:20px}.available{font-size:11px;color:var(--green);background:#173c28;padding:7px 10px;border-radius:30px}
+.description{color:var(--muted);font-size:14px;line-height:1.6}.code-label{font-size:11px;color:#9de9bd;font-weight:800;letter-spacing:1.5px;margin:22px 0 9px}
+pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#070b08;border:1px solid #263a2d;border-radius:12px;padding:17px;color:#b8f4ce;font:13px/1.7 Consolas,monospace;margin:0}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}button{border:0;border-radius:10px;padding:13px 18px;font-weight:800;cursor:pointer;font-size:12px;letter-spacing:.5px}
+.primary{background:var(--green);color:#07130b;flex:1}.secondary{background:#1a2920;color:#dcebe1;border:1px solid #304b39}.primary:hover{filter:brightness(1.08)}button:focus-visible{outline:2px solid white;outline-offset:3px}
+.notice{margin-top:15px;padding:13px 15px;border-left:3px solid #d7b45a;background:#241f12;color:#d9d0b2;border-radius:7px;font-size:12px;line-height:1.5}
+footer{text-align:center;color:#66776c;font-size:11px;letter-spacing:1px;padding:25px;border-top:1px solid var(--line)}
+#toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,20px);background:#173c28;color:#d9ffe7;border:1px solid #39e58c;padding:12px 18px;border-radius:10px;opacity:0;transition:.2s;pointer-events:none;font-size:13px}#toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:550px){header{height:66px;padding:0 5%}main{margin-top:35px}.hero{height:210px;padding:20px}.card{padding:18px}.card-head{align-items:flex-start}}
+</style>
+</head>
+<body>
+<header><div class="brand">SOUZA <span>X BLOX</span></div><div class="status">● SCRIPT HUB</div></header>
+<main>
+  <div class="eyebrow">ROBLOX • SCRIPT HUB</div>
+  <h1>VOX <span style="color:var(--green)">SEAS</span></h1>
+  <p class="subtitle">Bem-vindo ao painel exclusivo de Vox Seas.<br>Selecione o script e copie o código.</p>
+  <section class="hero" aria-label="Vox Seas">
+    <div class="hero-copy"><small>SOUZA X BLOX APRESENTA</small><h2>VOX SEAS HUB</h2><p>Seu painel de scripts</p></div>
+  </section>
+  <section class="card">
+    <div class="card-head"><h3>Vox Seas Hub</h3><span class="available">● DISPONÍVEL</span></div>
+    <p class="description">Script selecionado para Vox Seas. Use o botão abaixo para copiar o código.</p>
+    <div class="code-label">CÓDIGO LUA</div>
+    <pre id="script">loadstring(game:HttpGet("https://getaetherishub.com/loader.lua"))()</pre>
+    <div class="actions">
+      <button class="primary" id="copyBtn">▣ &nbsp; COPIAR SCRIPT</button>
+      <button class="secondary" id="selectBtn">SELECIONAR CÓDIGO</button>
+    </div>
+    <div class="notice"><strong>⚠ Atenção:</strong> código remoto pode mudar. Só utilize scripts de fontes em que você confia e verifique o conteúdo antes de executar.</div>
+  </section>
+</main>
+<footer>SOUZA X BLOX © 2026 • TODOS OS DIREITOS RESERVADOS</footer>
+<div id="toast" role="status" aria-live="polite">Código copiado!</div>
+<script>
+const code = document.getElementById('script').textContent;
+const toast = document.getElementById('toast');
+function showToast(message){toast.textContent=message;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2200)}
+document.getElementById('copyBtn').addEventListener('click',async()=>{
+  try{await navigator.clipboard.writeText(code);showToast('Código copiado!')}
+  catch(e){const area=document.createElement('textarea');area.value=code;document.body.appendChild(area);area.select();try{document.execCommand('copy');showToast('Código copiado!')}catch(_){showToast('Selecione e copie o código manualmente.')}area.remove()}
+});
+document.getElementById('selectBtn').addEventListener('click',()=>{const range=document.createRange();range.selectNodeContents(document.getElementById('script'));const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);showToast('Código selecionado')});
+</script>
+</body>
+</html>
